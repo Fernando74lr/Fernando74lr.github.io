@@ -103,7 +103,6 @@ function deleteTask(id_task) {
 }
 
 function deleteTaskKanban(id_task) {
-    updateProgressBar();
     let task_selected;
 
     // Identify the task
@@ -126,6 +125,7 @@ function deleteTaskKanban(id_task) {
     // Remove selected task
     task_selected.remove();
     card = '';
+    updateProgressBar();
 }
 
 function emptyList(tasks_1) {

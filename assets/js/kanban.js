@@ -48,10 +48,16 @@ function updateProgressBar() {
         bar_doing = $('#bar_doing')
         bar_done = $('#bar_done');
 
-    bar_todo.css('width', `${porcentage_todo}%`);
-    bar_doing.css('width', `${porcentage_doing}%`);
-    bar_done.css('width', `${porcentage_done}%`);
-
+    if (total_tasks == 0) {
+        bar_todo.css('width', '0%');
+        bar_doing.css('width', '0%');
+        bar_done.css('width', '0%');
+    } else {
+        bar_todo.css('width', `${porcentage_todo}%`);
+        bar_doing.css('width', `${porcentage_doing}%`);
+        bar_done.css('width', `${porcentage_done}%`);
+    }
+    
     // Sweet Alert for all work done
     if (porcentage_done == 100) allWorkDone();
 }
